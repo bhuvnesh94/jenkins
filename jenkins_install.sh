@@ -4,6 +4,12 @@ sudo apt update
 sudo apt upgrade -y
 
 # install java for jenkins
+sudo apt install openjdk-8-jdk -y
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/bin"
+source /etc/environment
+# print java version
+java -version
+# install jenkins
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 sudo apt update
